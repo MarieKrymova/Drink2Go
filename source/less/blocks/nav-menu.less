@@ -1,0 +1,133 @@
+.nav-menu {
+  text-transform: uppercase;
+}
+
+@media (max-width: @mobile-width-only) {
+  .nav-menu--closed .nav-menu__item {
+    display: none;
+  }
+
+  .nav-menu--opened .nav-menu__menu-list {
+    position: absolute;
+    z-index: 5;
+    right: 0;
+    width: 100%;
+  }
+
+  .nav-menu--closed .nav-menu__toggle::before {
+    content: "";
+    position: absolute;
+    background-image: url("../../img/icons&logo/menu_burger.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+  }
+
+  .nav-menu--opened .nav-menu__toggle::after {
+    content: "";
+    position: absolute;
+    background-image: url("../../img/icons&logo/menu_close.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+  }
+
+  .nav-menu--nojs .nav-menu__toggle {
+    display: none;
+  }
+
+  .nav-menu--nojs .nav-menu__item {
+    display: block;
+  }
+}
+
+.nav-menu__toggle {
+  position: absolute;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  z-index: 7;
+  width: 60px;
+  height: 60px;
+  right: 0;
+  top: 0;
+  background-color: transparent;
+
+  &:focus {
+    outline: none;
+    background-color: #f0ebff;
+  }
+
+  &:hover {
+    background-color: #f0ebff;
+  }
+
+  &:active {
+    background-color: #f0ebff;
+  }
+
+  &:disabled {
+    opacity: 0.1;
+  }
+
+  @media (min-width: @tablet-width) {
+    display: none;
+  }
+}
+
+.nav-menu__menu-list {
+  width: 100%;
+
+  @media (min-width: @tablet-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    /*display: flex;   --- посмотреть что лучше!!
+    flex-wrap: wrap;*/
+  }
+}
+
+.nav-menu__item {
+  width: 100%;
+  min-height: 57px;
+  text-align: center;
+  border-top: 1px solid #f0ebff;
+  background-color: #ffffff;
+  padding-top: 20px;
+  padding-bottom: 21px;
+
+  &:last-of-type {
+    border-bottom: 1px solid #f0ebff;
+  }
+
+  &:focus {
+    outline: none;
+    background-color: #f0ebff;
+  }
+
+  &:hover {
+    background-color: #f0ebff;
+  }
+
+  &:active {
+    background-color: #f0ebff;
+  }
+
+  &:disabled {
+    opacity: 0.1;
+  }
+
+  @media (min-width: @tablet-width) {
+    border: none;
+  }
+}
+
+.nav-menu__link {
+  color: #333333;
+}

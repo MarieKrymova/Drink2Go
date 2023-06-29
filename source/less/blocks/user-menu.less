@@ -1,0 +1,43 @@
+.user-menu {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 120px;
+
+  @media (min-width: @tablet-width) {
+    order: 2;
+    text-transform: uppercase;
+  }
+}
+
+.user-menu__login,
+.user-menu__cart {
+  width: 60px;
+  height: 60px;
+  padding-top: 22px;
+
+  &:focus {
+    outline: none;
+    background-color: #f0ebff;
+  }
+
+  &:hover {
+    background-color: #f0ebff;
+  }
+
+  &:active {
+    background-color: #f0ebff;
+  }
+
+  &:disabled {
+    opacity: 0.1;
+  }
+}
+
+.user-menu__link {
+  display: none;
+
+  @media (min-width: @desktop-width) {
+    display: inline;
+    text-transform: uppercase;
+  }
+}
